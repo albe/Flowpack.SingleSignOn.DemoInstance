@@ -1,5 +1,5 @@
 <?php
-namespace MyCompany\SingleSignOnDemo\Controller;
+namespace Acme\DemoInstance\Controller;
 
 /*                                                                        *
  * This script belongs to the FLOW3 package "MyCompany.SingleSignOnDemo". *

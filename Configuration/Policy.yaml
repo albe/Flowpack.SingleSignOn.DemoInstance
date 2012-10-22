@@ -1,10 +1,10 @@
 resources:
   methods:
-    MyCompany_SingleSignOnDemo_StandardController_secure: "method(MyCompany\SingleSignOnDemo\Controller\StandardController->secureAction())"
+    Acme_DemoInstance_StandardController_secure: "method(Acme\DemoInstance\Controller\StandardController->secureAction())"
 
 roles:
   Administrator: []
 
 acls:
   Administrator:
-    MyCompany_SingleSignOnDemo_StandardController_secure: GRANT
+    Acme_DemoInstance_StandardController_secure: GRANT
