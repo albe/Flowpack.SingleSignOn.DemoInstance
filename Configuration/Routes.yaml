@@ -1,0 +1,6 @@
+-
+  name: 'DemoInstance welcome'
+  uriPattern: ''
+  defaults:
+    '@package':    'Acme.DemoInstance'
+    '@controller': 'Standard'

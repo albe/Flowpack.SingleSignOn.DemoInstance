@@ -1,13 +1,14 @@
 {
-	"name":"acme/demoinstance",
-	"type":"typo3-flow-package",
-	"description":"Application package serving as a demo for an SSO instance",
-	"require":{
-		"typo3/flow":"dev-master"
+	"name": "acme/demoinstance",
+	"type": "typo3-flow-package",
+	"description": "Application package serving as a demo for an SSO instance",
+	"require": {
+		"typo3/flow": "*",
+		"typo3\/singlesignon-client": "*"
 	},
 	"autoload":{
 		"psr-0":{
-			"Acme\\Demo":"Classes"
+			"Acme\\DemoInstance": "Classes"
 		}
 	}
 }

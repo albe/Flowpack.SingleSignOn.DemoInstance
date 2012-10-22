@@ -1,0 +1,8 @@
+TYPO3:
+  Flow:
+    security:
+      authentication:
+        providers:
+          SingleSignOnProvider:
+            provider: 'TYPO3\SingleSignOn\Client\Security\SingleSignOnProvider'
+            entryPoint: 'TYPO3\SingleSignOn\Client\Security\EntryPoint\SingleSignOnRedirect'
