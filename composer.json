@@ -1,0 +1,8 @@
+{
+    "name": "acme/demoinstance",
+    "description" : "Application package serving as a demo for an SSO instance",
+    "require": {
+        "typo3/flow": "dev-master"
+    },
+    "minimum-stability": "dev"
+}
