@@ -1,8 +1,13 @@
 {
-    "name": "acme/demoinstance",
-    "description" : "Application package serving as a demo for an SSO instance",
-    "require": {
-        "typo3/flow": "dev-master"
-    },
-    "minimum-stability": "dev"
+	"name":"acme/demoinstance",
+	"type":"typo3-flow-package",
+	"description":"Application package serving as a demo for an SSO instance",
+	"require":{
+		"typo3/flow":"dev-master"
+	},
+	"autoload":{
+		"psr-0":{
+			"Acme\\Demo":"Classes"
+		}
+	}
 }
