@@ -1,13 +1,24 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="utf-8">
-		<title>SSO demo instance</title>
-		<f:base />
-	</head>
-	<body>
-		<h1>Unprotected action</h1>
-		<p>Everybody can access this action.</p>
-		<p><f:link.action action="secure">Go to secure action</f:link.action></p>
-	</body>
+<head>
+	<meta charset="utf-8">
+	<title>SSO demo instance</title>
+	<f:base/>
+</head>
+<body>
+<h1>Unprotected action</h1>
+
+<p>Everybody can access this action.</p>
+<f:security.ifAuthenticated>
+	<f:then>
+		You are authenticated.
+	</f:then>
+	<f:else>
+		Not authenticated.
+	</f:else>
+</f:security.ifAuthenticated>
+<p>
+	<f:link.action action="secure">Go to secure action</f:link.action>
+</p>
+</body>
 </html>
