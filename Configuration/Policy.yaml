@@ -7,4 +7,5 @@ roles:
 
 acls:
   Administrator:
-    Acme_DemoInstance_StandardController_secure: GRANT
+    methods:
+      Acme_DemoInstance_StandardController_secure: GRANT
