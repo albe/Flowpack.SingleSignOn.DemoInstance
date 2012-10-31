@@ -5,4 +5,23 @@ TYPO3:
         providers:
           SingleSignOnProvider:
             provider: 'TYPO3\SingleSignOn\Client\Security\SingleSignOnProvider'
+            providerOptions:
+              server: DemoServer
             entryPoint: 'TYPO3\SingleSignOn\Client\Security\EntryPoint\SingleSignOnRedirect'
+            entryPointOptions:
+              server: DemoServer
+
+  SingleSignOn:
+    Client:
+      client:
+        # Identifier of the DemoInstance client
+        identifier: ''
+        # Key pair UUID of the DemoInstance client
+        keyPairUuid: ''
+
+      server:
+        DemoServer:
+          # Authentication endpoint URI of a SSO server
+          endpointUri: ''
+          # Public key fingerprint of a SSO server
+          publicKeyUuid: ''

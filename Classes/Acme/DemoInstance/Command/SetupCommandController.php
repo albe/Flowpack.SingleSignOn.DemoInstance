@@ -50,9 +50,9 @@ class SetupCommandController extends \TYPO3\Flow\Cli\CommandController {
 		$this->outputLine('Registered demo client key pair');
 
 		$globalSettings = $this->yamlSource->load(FLOW_PATH_CONFIGURATION . '/Settings');
-		$globalSettings['TYPO3']['SingleSignOn']['Client']['ssoClientIdentifier'] = 'demoinstance';
-		$globalSettings['TYPO3']['SingleSignOn']['Client']['ssoClientKeyPairUuid'] = $clientKeyPairUuid;
-		$globalSettings['TYPO3']['SingleSignOn']['Client']['ssoServerPublicKeyUuid'] = $serverPublicKeyUuid;
+		$globalSettings['TYPO3']['SingleSignOn']['Client']['client']['identifier'] = 'demoinstance';
+		$globalSettings['TYPO3']['SingleSignOn']['Client']['client']['keyPairUuid'] = $clientKeyPairUuid;
+		$globalSettings['TYPO3']['SingleSignOn']['Client']['server']['DemoServer']['publicKeyUuid'] = $serverPublicKeyUuid;
 		$this->yamlSource->save(FLOW_PATH_CONFIGURATION . '/Settings', $globalSettings);
 		$this->outputLine('Updated settings');
 	}
