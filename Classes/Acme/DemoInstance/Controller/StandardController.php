@@ -34,6 +34,7 @@ class StandardController extends \TYPO3\Flow\Mvc\Controller\ActionController {
 	 * Secure action (protected)
 	 *
 	 * @return void
+	 * @Flow\SkipCsrfProtection
 	 */
 	public function secureAction() {
 		$account = $this->securityContext->getAccount();
