@@ -36,7 +36,9 @@ class StandardController extends \TYPO3\Flow\Mvc\Controller\ActionController {
 	 * @return void
 	 */
 	public function secureAction() {
-		$this->view->assign('account', $this->securityContext->getAccount());
+		$account = $this->securityContext->getAccount();
+		$this->view->assign('account', $account);
+
 	}
 
 }
