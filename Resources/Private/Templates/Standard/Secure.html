@@ -1,12 +1,95 @@
 <!DOCTYPE html>
-<html>
-	<head>
-		<meta charset="utf-8">
-		<title>Secure view of Standard controller</title>
-		<f:base />
-	</head>
-	<body>
-		<h1>Success, it's secure</h1>
-		<h2 id="login-status">Logged in as: {account.accountIdentifier}, Roles: {account.roles.0}</h2>
-	</body>
+{namespace bootstrap=TYPO3\Twitter\Bootstrap\ViewHelpers}
+{namespace demo=Acme\DemoInstance\ViewHelpers}
+<html lang="en" xmlns="http://www.w3.org/1999/html" xmlns:f="http://www.w3.org/1999/html">
+<head>
+	<meta charset="utf-8">
+	<title>SSO Demo Instance - Secured resource</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="">
+	<meta name="author" content="">
+
+	<f:base/>
+	<bootstrap:include version="2.1" includeJQuery="TRUE"/>
+	<link href="{f:uri.resource(path: 'Stylesheets/styles.css')}" rel="stylesheet"/>
+</head>
+
+<body>
+
+<div class="navbar navbar-inverse navbar-fixed-top">
+	<div class="navbar-inner">
+		<div class="container-fluid">
+			<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</a>
+			<a class="brand" href="#">SSO Demo Instance</a>
+
+			<f:security.ifAuthenticated>
+				<demo:security.account as="account">
+				<div class="btn-group pull-right">
+					<a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
+						<i class="icon-user"></i> {account.accountIdentifier}
+						<span class="caret"></span>
+					</a>
+					<ul class="dropdown-menu">
+						<li>
+							<a href="#">
+								<strong>Roles:</strong>
+								<f:for each="{account.roles}" as="role">{role}</f:for>
+							</a>
+						</li>
+						<li class="divider"></li>
+						<li>
+							<f:link.action controller="Authentication" action="logout">Logout</f:link.action>
+						</li>
+					</ul>
+				</div>
+				</demo:security.account>
+			</f:security.ifAuthenticated>
+			<div class="nav-collapse">
+				<ul class="nav">
+					<li class="active"><a href="#">Home</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="container-fluid">
+	<div class="row-fluid">
+		<div class="span3">
+			<div class="well sidebar-nav">
+				<ul class="nav nav-list">
+					<li class="nav-header">Sidebar</li>
+					<li class="active"><a href="#">Link</a></li>
+					<li><a href="#">Link</a></li>
+					<li><a href="#">Link</a></li>
+					<li><a href="#">Link</a></li>
+				</ul>
+			</div>
+			<!--/.well -->
+		</div>
+		<!--/span-->
+		<div class="span9">
+			<f:flashMessages/>
+
+			<div class="hero-unit">
+				<h1>Secured</h1>
+
+				<p>You are viewing a secured resource. It should only be visible to authenticated
+				accounts with an <i>Administrator</i> roles.</p>
+			</div>
+		</div>
+	</div>
+
+	<hr>
+
+	<footer>
+		<p>TYPO3.SingleSignon</p>
+	</footer>
+
+</div>
+</body>
 </html>

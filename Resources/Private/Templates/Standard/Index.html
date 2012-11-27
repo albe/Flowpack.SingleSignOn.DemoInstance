@@ -1,24 +1,111 @@
 <!DOCTYPE html>
-<html>
+{namespace bootstrap=TYPO3\Twitter\Bootstrap\ViewHelpers}
+{namespace demo=Acme\DemoInstance\ViewHelpers}
+<html lang="en" xmlns="http://www.w3.org/1999/html" xmlns:f="http://www.w3.org/1999/html">
 <head>
 	<meta charset="utf-8">
-	<title>SSO demo instance</title>
-	<f:base/>
-</head>
-<body>
-<h1>Unprotected action</h1>
+	<title>SSO Demo Instance</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="">
+	<meta name="author" content="">
 
-<p>Everybody can access this action.</p>
-<f:security.ifAuthenticated>
-	<f:then>
-		You are authenticated.
-	</f:then>
-	<f:else>
-		Not authenticated.
-	</f:else>
-</f:security.ifAuthenticated>
-<p>
-	<f:link.action action="secure">Go to secure action</f:link.action>
-</p>
+	<f:base/>
+	<bootstrap:include version="2.1" includeJQuery="TRUE"/>
+	<link href="{f:uri.resource(path: 'Stylesheets/styles.css')}" rel="stylesheet"/>
+</head>
+
+<body>
+
+<div class="navbar navbar-inverse navbar-fixed-top">
+	<div class="navbar-inner">
+		<div class="container-fluid">
+			<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</a>
+			<a class="brand" href="#">SSO Demo Instance</a>
+
+			<f:security.ifAuthenticated>
+				<demo:security.account as="account">
+				<div class="btn-group pull-right">
+					<a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
+						<i class="icon-user"></i> {account.accountIdentifier}
+						<span class="caret"></span>
+					</a>
+					<ul class="dropdown-menu">
+						<li>
+							<a href="#">
+								<strong>Roles:</strong>
+								<f:for each="{account.roles}" as="role">{role}</f:for>
+							</a>
+						</li>
+						<li class="divider"></li>
+						<li>
+							<f:link.action controller="Authentication" action="logout">Logout</f:link.action>
+						</li>
+					</ul>
+				</div>
+				</demo:security.account>
+			</f:security.ifAuthenticated>
+			<div class="nav-collapse">
+				<ul class="nav">
+					<li class="active"><a href="#">Home</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="container-fluid">
+	<div class="row-fluid">
+		<div class="span3">
+			<div class="well sidebar-nav">
+				<ul class="nav nav-list">
+					<li class="nav-header">Sidebar</li>
+					<li class="active"><a href="#">Link</a></li>
+					<li><a href="#">Link</a></li>
+					<li><a href="#">Link</a></li>
+					<li><a href="#">Link</a></li>
+				</ul>
+			</div>
+			<!--/.well -->
+		</div>
+		<!--/span-->
+		<div class="span9">
+			<f:flashMessages/>
+
+			<div class="hero-unit">
+				<h1>Welcome!</h1>
+
+				<p>You arrived at a demo instance using the SSO server.</p>
+
+				<p>
+					<f:link.action action="secure">Go to secure action</f:link.action>
+				</p>
+			</div>
+			<f:security.ifAuthenticated>
+				<f:then></f:then>
+				<f:else>
+					<div class="alert alert-info alert-block">
+						<h4 class="alert-heading">Not authenticated</h4>
+
+						<p>
+							You are not yet authenticated, so the local Single Sign-On provider will
+							redirect you to the SSO server to authenticate.
+						</p>
+					</div>
+				</f:else>
+			</f:security.ifAuthenticated>
+		</div>
+	</div>
+
+	<hr>
+
+	<footer>
+		<p>TYPO3.SingleSignon</p>
+	</footer>
+
+</div>
 </body>
 </html>

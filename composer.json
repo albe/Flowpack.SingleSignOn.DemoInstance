@@ -4,7 +4,8 @@
 	"description": "Application package serving as a demo for an SSO instance",
 	"require": {
 		"typo3/flow": "*",
-		"typo3\/singlesignon-client": "*"
+		"typo3\/singlesignon-client": "*",
+		"typo3\/twitter-bootstrap": "dev-master"
 	},
 	"autoload":{
 		"psr-0":{
