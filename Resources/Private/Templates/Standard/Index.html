@@ -50,7 +50,8 @@
 			</f:security.ifAuthenticated>
 			<div class="nav-collapse">
 				<ul class="nav">
-					<li class="active"><a href="#">Home</a></li>
+					<li class="active"><a href="/">Home</a></li>
+					<li><f:link.action action="secure">Secure</f:link.action></li>
 				</ul>
 			</div>
 		</div>
@@ -76,23 +77,34 @@
 			<f:flashMessages/>
 
 			<div class="hero-unit">
-				<h1>Welcome!</h1>
+				<h1>Instance</h1>
 
 				<p>You arrived at a demo instance using the SSO server.</p>
 
 				<p>
-					<f:link.action action="secure">Go to secure action</f:link.action>
+					<f:link.action action="secure" class="btn btn-warning"><i class="icon-lock icon-white"></i> Go to secure action</f:link.action>
+				</p>
+				<p>
+					<a href="{settings.demoServerUri}" class="btn btn-primary">Go to demo server</a>
 				</p>
 			</div>
 			<f:security.ifAuthenticated>
-				<f:then></f:then>
+				<f:then>
+					<div class="alert alert-success alert-block">
+						<h4 class="alert-heading">Already authenticated</h4>
+
+						<p>
+							You are already authenticated locally.
+						</p>
+					</div>
+				</f:then>
 				<f:else>
 					<div class="alert alert-info alert-block">
 						<h4 class="alert-heading">Not authenticated</h4>
 
 						<p>
 							You are not yet authenticated, so the local Single Sign-On provider will
-							redirect you to the SSO server to authenticate.
+							redirect you to the SSO server to authenticate for a secured resource.
 						</p>
 					</div>
 				</f:else>

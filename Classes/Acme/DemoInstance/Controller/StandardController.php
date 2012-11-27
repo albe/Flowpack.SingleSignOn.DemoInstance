@@ -16,12 +16,6 @@ use TYPO3\Flow\Annotations as Flow;
 class StandardController extends \TYPO3\Flow\Mvc\Controller\ActionController {
 
 	/**
-	 * @Flow\Inject
-	 * @var \TYPO3\Flow\Security\Context
-	 */
-	protected $securityContext;
-
-	/**
 	 * Index action (unprotected)
 	 *
 	 * @return void
@@ -37,8 +31,6 @@ class StandardController extends \TYPO3\Flow\Mvc\Controller\ActionController {
 	 * @Flow\SkipCsrfProtection
 	 */
 	public function secureAction() {
-		$account = $this->securityContext->getAccount();
-		$this->view->assign('account', $account);
 
 	}
 

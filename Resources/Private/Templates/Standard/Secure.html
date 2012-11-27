@@ -50,7 +50,8 @@
 			</f:security.ifAuthenticated>
 			<div class="nav-collapse">
 				<ul class="nav">
-					<li class="active"><a href="#">Home</a></li>
+					<li><a href="/">Home</a></li>
+					<li class="active"><f:link.action action="secure">Secure</f:link.action></li>
 				</ul>
 			</div>
 		</div>
@@ -78,9 +79,16 @@
 			<div class="hero-unit">
 				<h1>Secured</h1>
 
-				<p>You are viewing a secured resource. It should only be visible to authenticated
+				<p><i class="icon-ok"></i> You are viewing a secured resource. It should only be visible to authenticated
 				accounts with an <i>Administrator</i> roles.</p>
 			</div>
+			<f:security.ifAuthenticated>
+				<demo:security.account as="account">
+					<p>
+						<span id="login-status">Logged in as: {account.accountIdentifier}, Roles: {account.roles.0}</span>
+					</p>
+				</demo:security.account>
+			</f:security.ifAuthenticated>
 		</div>
 	</div>
 

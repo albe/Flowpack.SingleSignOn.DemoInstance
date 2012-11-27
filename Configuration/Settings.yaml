@@ -25,3 +25,7 @@ TYPO3:
           endpointUri: ''
           # Public key fingerprint of a SSO server
           publicKeyUuid: ''
+
+Acme:
+  DemoInstance:
+    demoServerUri: http://ssodemoserver.dev/
