@@ -26,6 +26,12 @@ TYPO3:
           # Public key fingerprint of a SSO server
           publicKeyUuid: ''
 
+      accountMapper:
+        typeMapping:
+          # Map a user type from the server to one of the instance, more complex scenarios
+          # need a specialized account mapper implementation (see GlobalAccountMapperInterface)
+          'Acme\DemoServer\Domain\Model\User': 'Acme\DemoInstance\Domain\Model\User'
+
 Acme:
   DemoInstance:
     demoServerUri: http://ssodemoserver.dev/
