@@ -4,13 +4,14 @@
 <html lang="en" xmlns="http://www.w3.org/1999/html" xmlns:f="http://www.w3.org/1999/html">
 <head>
 	<meta charset="utf-8">
-	<title>SSO Demo Instance - Secured resource</title>
+	<title>SSO Demo Instance - Configuration</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="description" content="">
 	<meta name="author" content="">
 
 	<f:base/>
 	<bootstrap:include version="2.1" includeJQuery="TRUE"/>
+	<script src="{f:uri.resource(path: 'JavaScripts/jquery.tablesorter.min.js')}"></script>
 	<link href="{f:uri.resource(path: 'Stylesheets/styles.css')}" rel="stylesheet"/>
 </head>
 
@@ -27,33 +28,28 @@
 					<li>
 						<f:link.action action="index" controller="Standard">Home</f:link.action>
 					</li>
-					<li class="active">
+					<li>
 						<f:link.action action="secure" controller="Standard">Secure</f:link.action>
 					</li>
-					<li>
+					<li class="active">
 						<f:link.action action="index" controller="Configuration">Configuration</f:link.action>
 					</li>
 				</ul>
 			</div>
-			<!--/.well -->
 		</div>
-		<!--/span-->
 		<div class="span9">
 			<f:flashMessages/>
 
-			<div class="hero-unit">
-				<h1>Secured</h1>
+			<div class="row-fluid">
+				<div class="span12">
+					<h2>Settings</h2>
+					<h3>TYPO3.SingleSignOn.Client</h3>
+					<pre>{clientSettings}</pre>
 
-				<p><i class="icon-ok"></i> You are viewing a secured resource. It should only be visible to authenticated
-				accounts with an <i>Administrator</i> roles.</p>
+					<h3>TYPO3.Flow.security.authentication</h3>
+					<pre>{authenticationSettings}</pre>
+				</div>
 			</div>
-			<f:security.ifAuthenticated>
-				<demo:security.account as="account">
-					<p>
-						<span id="login-status">Logged in as: {account.accountIdentifier}, Roles: {account.roles.0}, Name: {account.party.fullname}</span>
-					</p>
-				</demo:security.account>
-			</f:security.ifAuthenticated>
 		</div>
 	</div>
 
