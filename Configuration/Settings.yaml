@@ -14,15 +14,15 @@ TYPO3:
   SingleSignOn:
     Client:
       client:
-        # Identifier of the DemoInstance client
-        identifier: ''
+        # Service base URI as identifier of the DemoInstance client
+        serviceBaseUri: ''
         # Key pair UUID of the DemoInstance client
         keyPairUuid: ''
 
       server:
         DemoServer:
-          # Authentication endpoint URI of a SSO server
-          endpointUri: ''
+          # Service base URI of the SSO server
+          serviceBaseUri: ''
           # Public key fingerprint of a SSO server
           publicKeyUuid: ''
 
