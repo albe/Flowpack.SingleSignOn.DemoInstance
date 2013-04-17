@@ -50,7 +50,7 @@
 			<f:security.ifAuthenticated>
 				<demo:security.account as="account">
 					<p>
-						<span id="login-status">Logged in as: {account.accountIdentifier}, Roles: {account.roles.0}, Name: {account.party.fullname}</span>
+						<span id="login-status">Logged in as: {account.accountIdentifier}, Roles: <f:for each="{account.roles}" as="role">{role.identifier}</f:for>, Name: {account.party.fullname}</span>
 					</p>
 				</demo:security.account>
 			</f:security.ifAuthenticated>
