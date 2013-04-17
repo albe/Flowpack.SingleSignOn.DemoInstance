@@ -4,8 +4,12 @@ resources:
 
 roles:
   Administrator: []
+  User: []
 
 acls:
   Administrator:
+    methods:
+      Acme_DemoInstance_StandardController_secure: GRANT
+  User:
     methods:
       Acme_DemoInstance_StandardController_secure: GRANT
