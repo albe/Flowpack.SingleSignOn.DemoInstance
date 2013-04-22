@@ -1,15 +1,15 @@
 resources:
   methods:
-    Acme_DemoInstance_StandardController_secure: "method(Acme\DemoInstance\Controller\StandardController->secureAction())"
+    Flowpack_SingleSignOn_DemoInstance_StandardController_secure: "method(Flowpack\SingleSignOn\DemoInstance\Controller\StandardController->secureAction())"
 
 roles:
   Administrator: []
-  User: []
+  User: [ Editor ]
 
 acls:
   Administrator:
     methods:
-      Acme_DemoInstance_StandardController_secure: GRANT
+      Flowpack_SingleSignOn_DemoInstance_StandardController_secure: GRANT
   User:
     methods:
-      Acme_DemoInstance_StandardController_secure: GRANT
+      Flowpack_SingleSignOn_DemoInstance_StandardController_secure: GRANT

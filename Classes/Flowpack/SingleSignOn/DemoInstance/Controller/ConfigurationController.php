@@ -1,10 +1,9 @@
 <?php
-namespace Acme\DemoInstance\Controller;
+namespace Flowpack\SingleSignOn\DemoInstance\Controller;
 
-/*                                                                        *
- * This script belongs to the TYPO3 Flow package "Acme.DemoServer".       *
- *                                                                        *
- *                                                                        */
+/*                                                                                     *
+ * This script belongs to the TYPO3 Flow package "Flowpack.SingleSignOn.DemoInstance". *
+ *                                                                                     */
 
 use TYPO3\Flow\Annotations as Flow;
 
@@ -17,7 +16,7 @@ class ConfigurationController extends \TYPO3\Flow\Mvc\Controller\ActionControlle
 
 	/**
 	 * @Flow\Inject
-	 * @var \TYPO3\SingleSignOn\Client\Domain\Repository\SsoServerRepository
+	 * @var \Flowpack\SingleSignOn\Client\Domain\Repository\SsoServerRepository
 	 */
 	protected $ssoClientRepository;
 
@@ -31,7 +30,7 @@ class ConfigurationController extends \TYPO3\Flow\Mvc\Controller\ActionControlle
 	 * Display configuration of client
 	 */
 	public function indexAction() {
-		$clientSettings = $this->configurationManager->getConfiguration(\TYPO3\Flow\Configuration\ConfigurationManager::CONFIGURATION_TYPE_SETTINGS, 'TYPO3.SingleSignOn.Client');
+		$clientSettings = $this->configurationManager->getConfiguration(\TYPO3\Flow\Configuration\ConfigurationManager::CONFIGURATION_TYPE_SETTINGS, 'Flowpack.SingleSignOn.Client');
 		$clientSettingsYaml = \Symfony\Component\Yaml\Yaml::dump($clientSettings, 99, 2);
 		$this->view->assign('clientSettings', $clientSettingsYaml);
 

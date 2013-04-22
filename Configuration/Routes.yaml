@@ -2,5 +2,5 @@
   name: 'DemoInstance welcome'
   uriPattern: ''
   defaults:
-    '@package':    'Acme.DemoInstance'
+    '@package':    'Flowpack.SingleSignOn.DemoInstance'
     '@controller': 'Standard'

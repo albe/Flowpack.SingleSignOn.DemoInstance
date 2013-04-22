@@ -1,10 +1,9 @@
 <?php
-namespace Acme\DemoInstance\Controller;
+namespace Flowpack\SingleSignOn\DemoInstance\Controller;
 
-/*                                                                        *
- * This script belongs to the Flow package "MyCompany.SingleSignOnDemo". *
- *                                                                        *
- *                                                                        */
+/*                                                                                     *
+ * This script belongs to the TYPO3 Flow package "Flowpack.SingleSignOn.DemoInstance". *
+ *                                                                                     */
 
 use TYPO3\Flow\Annotations as Flow;
 

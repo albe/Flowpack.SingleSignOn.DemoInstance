@@ -1,15 +1,30 @@
 {
-	"name": "acme/demoinstance",
+	"name": "flowpack/singlesignon-demoinstance",
 	"type": "typo3-flow-package",
 	"description": "Application package serving as a demo for an SSO instance",
+	"license": ["MIT"],
+	"authors": [
+		{
+			"name": "Christopher Hlubek",
+			"email": "hlubek@networkteam.com",
+			"homepage": "http://www.networkteam.com",
+			"role": "Developer"
+		},
+		{
+			"name": "Robert Lemke",
+			"email": "rl@robertlemke.com",
+			"homepage": "http://robertlemke.com",
+			"role": "Developer"
+		}
+	],
 	"require": {
-		"typo3/flow": "*",
-		"typo3\/singlesignon-client": "*",
+		"typo3\/flow": "~2.0",
+		"flowpack\/singlesignon-client": "*",
 		"typo3\/twitter-bootstrap": "dev-master"
 	},
 	"autoload":{
 		"psr-0":{
-			"Acme\\DemoInstance": "Classes"
+			"Flowpack\\SingleSignOn\\DemoInstance": "Classes"
 		}
 	}
 }
