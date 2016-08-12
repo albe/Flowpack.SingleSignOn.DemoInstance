@@ -1,9 +1,9 @@
 <?php
 namespace Flowpack\SingleSignOn\DemoInstance\ViewHelpers\Security;
 
-/*                                                                                     *
- * This script belongs to the TYPO3 Flow package "Flowpack.SingleSignOn.DemoInstance". *
- *                                                                                     */
+/*                                                                                         *
+ * This script belongs to the Flow Framework package "Flowpack.SingleSignOn.DemoInstance". *
+ *                                                                                         */
 
 use TYPO3\Flow\Annotations as Flow;
 
@@ -17,6 +17,8 @@ class AccountViewHelper extends \TYPO3\Fluid\Core\ViewHelper\AbstractViewHelper 
 	 * @var \TYPO3\Flow\Security\Context
 	 */
 	protected $securityContext;
+
+	protected $escapeOutput = FALSE;
 
 	/**
 	 * Assign the authenticated account to a template variable
@@ -33,4 +35,3 @@ class AccountViewHelper extends \TYPO3\Fluid\Core\ViewHelper\AbstractViewHelper 
 
 }
 
-?>

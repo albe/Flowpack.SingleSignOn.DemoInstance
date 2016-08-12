@@ -1,9 +1,9 @@
 <?php
 namespace Flowpack\SingleSignOn\DemoInstance\Controller;
 
-/*                                                                                     *
- * This script belongs to the TYPO3 Flow package "Flowpack.SingleSignOn.DemoInstance". *
- *                                                                                     */
+/*                                                                                         *
+ * This script belongs to the Flow Framework package "Flowpack.SingleSignOn.DemoInstance". *
+ *                                                                                         */
 
 use TYPO3\Flow\Annotations as Flow;
 
@@ -41,4 +41,3 @@ class ConfigurationController extends \TYPO3\Flow\Mvc\Controller\ActionControlle
 
 }
 
-?>

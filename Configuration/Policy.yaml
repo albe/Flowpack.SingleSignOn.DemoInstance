@@ -1,15 +1,17 @@
-resources:
-  methods:
-    Flowpack_SingleSignOn_DemoInstance_StandardController_secure: "method(Flowpack\SingleSignOn\DemoInstance\Controller\StandardController->secureAction())"
+privilegeTargets:
+  'TYPO3\Flow\Security\Authorization\Privilege\Method\MethodPrivilege':
+    'Flowpack_SingleSignOn_DemoInstance_StandardController_secure':
+      matcher: 'method(Flowpack\SingleSignOn\DemoInstance\Controller\StandardController->secureAction())'
 
 roles:
-  Administrator: []
-  User: [ ]
+  'Flowpack.SingleSignOn.DemoInstance:Administrator':
+    privileges:
+      -
+        privilegeTarget: 'Flowpack_SingleSignOn_DemoInstance_StandardController_secure'
+        permission: GRANT
 
-acls:
-  Administrator:
-    methods:
-      Flowpack_SingleSignOn_DemoInstance_StandardController_secure: GRANT
-  User:
-    methods:
-      Flowpack_SingleSignOn_DemoInstance_StandardController_secure: GRANT
+  'Flowpack.SingleSignOn.DemoInstance:User':
+    privileges:
+      -
+        privilegeTarget: 'Flowpack_SingleSignOn_DemoInstance_StandardController_secure'
+        permission: GRANT

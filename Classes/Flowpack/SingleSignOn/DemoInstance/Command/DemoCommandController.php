@@ -1,9 +1,9 @@
 <?php
 namespace Flowpack\SingleSignOn\DemoInstance\Command;
 
-/*                                                                                     *
- * This script belongs to the TYPO3 Flow package "Flowpack.SingleSignOn.DemoInstance". *
- *                                                                                     */
+/*                                                                                         *
+ * This script belongs to the Flow Framework package "Flowpack.SingleSignOn.DemoInstance". *
+ *                                                                                         */
 
 use TYPO3\Flow\Annotations as Flow;
 use TYPO3\Flow\Cli\CommandController;
@@ -64,4 +64,3 @@ class DemoCommandController extends CommandController {
 
 
 }
-?>
