@@ -5,14 +5,14 @@ namespace Flowpack\SingleSignOn\DemoInstance\Controller;
  * This script belongs to the Flow Framework package "Flowpack.SingleSignOn.DemoInstance". *
  *                                                                                         */
 
-use TYPO3\Flow\Annotations as Flow;
+use Neos\Flow\Annotations as Flow;
 
 /**
  * Authentication controller for the SSO DemoInstance package
  *
  * @Flow\Scope("singleton")
  */
-class AuthenticationController extends \TYPO3\Flow\Security\Authentication\Controller\AbstractAuthenticationController {
+class AuthenticationController extends \Neos\Flow\Security\Authentication\Controller\AbstractAuthenticationController {
 
 	/**
 	 * Logout action
@@ -33,10 +33,10 @@ class AuthenticationController extends \TYPO3\Flow\Security\Authentication\Contr
 	 * }
 	 * $this->redirect('someDefaultActionAfterLogin');
 	 *
-	 * @param \TYPO3\Flow\Mvc\ActionRequest $originalRequest The request that was intercepted by the security framework, NULL if there was none
+	 * @param \Neos\Flow\Mvc\ActionRequest $originalRequest The request that was intercepted by the security framework, NULL if there was none
 	 * @return string
 	 */
-	protected function onAuthenticationSuccess(\TYPO3\Flow\Mvc\ActionRequest $originalRequest = NULL) {
+	protected function onAuthenticationSuccess(\Neos\Flow\Mvc\ActionRequest $originalRequest = NULL) {
 		$this->redirect('index', 'Standard');
 	}
 

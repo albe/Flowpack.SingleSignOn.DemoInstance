@@ -5,14 +5,14 @@ namespace Flowpack\SingleSignOn\DemoInstance\Controller;
  * This script belongs to the Flow Framework package "Flowpack.SingleSignOn.DemoInstance". *
  *                                                                                         */
 
-use TYPO3\Flow\Annotations as Flow;
+use Neos\Flow\Annotations as Flow;
 
 /**
  * Standard controller for the SSO DemoInstance package
  *
  * @Flow\Scope("singleton")
  */
-class StandardController extends \TYPO3\Flow\Mvc\Controller\ActionController {
+class StandardController extends \Neos\Flow\Mvc\Controller\ActionController {
 
 	/**
 	 * Index action (unprotected)

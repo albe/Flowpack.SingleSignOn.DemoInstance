@@ -5,9 +5,9 @@ namespace Flowpack\SingleSignOn\DemoInstance\Command;
  * This script belongs to the Flow Framework package "Flowpack.SingleSignOn.DemoInstance". *
  *                                                                                         */
 
-use TYPO3\Flow\Annotations as Flow;
-use TYPO3\Flow\Cli\CommandController;
-use TYPO3\Flow\Utility\Files;
+use Neos\Flow\Annotations as Flow;
+use Neos\Flow\Cli\CommandController;
+use Neos\Flow\Utility\Files;
 
 /**
  * Command controller for setting up a demo instance
@@ -18,13 +18,13 @@ class DemoCommandController extends CommandController {
 
 	/**
 	 * @Flow\Inject
-	 * @var \TYPO3\Flow\Security\Cryptography\RsaWalletServiceInterface
+	 * @var \Neos\Flow\Security\Cryptography\RsaWalletServiceInterface
 	 */
 	protected $rsaWalletService;
 
 	/**
 	 * @Flow\Inject
-	 * @var \TYPO3\Flow\Configuration\Source\YamlSource
+	 * @var \Neos\Flow\Configuration\Source\YamlSource
 	 */
 	protected $yamlSource;
 

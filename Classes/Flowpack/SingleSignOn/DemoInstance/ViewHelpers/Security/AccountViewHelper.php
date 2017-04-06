@@ -5,7 +5,7 @@ namespace Flowpack\SingleSignOn\DemoInstance\ViewHelpers\Security;
  * This script belongs to the Flow Framework package "Flowpack.SingleSignOn.DemoInstance". *
  *                                                                                         */
 
-use TYPO3\Flow\Annotations as Flow;
+use Neos\Flow\Annotations as Flow;
 
 /**
  * Security account view helper
@@ -14,7 +14,7 @@ class AccountViewHelper extends \TYPO3\Fluid\Core\ViewHelper\AbstractViewHelper 
 
 	/**
 	 * @Flow\Inject
-	 * @var \TYPO3\Flow\Security\Context
+	 * @var \Neos\Flow\Security\Context
 	 */
 	protected $securityContext;
 

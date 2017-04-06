@@ -5,7 +5,7 @@ namespace Flowpack\SingleSignOn\DemoInstance\Domain\Model;
  * This script belongs to the Flow Framework package "Flowpack.SingleSignOn.DemoInstance". *
  *                                                                                         */
 
-use TYPO3\Flow\Annotations as Flow;
+use Neos\Flow\Annotations as Flow;
 use Doctrine\ORM\Mapping as ORM;
 
 /**

@@ -1,5 +1,5 @@
 privilegeTargets:
-  'TYPO3\Flow\Security\Authorization\Privilege\Method\MethodPrivilege':
+  'Neos\Flow\Security\Authorization\Privilege\Method\MethodPrivilege':
     'Flowpack_SingleSignOn_DemoInstance_StandardController_secure':
       matcher: 'method(Flowpack\SingleSignOn\DemoInstance\Controller\StandardController->secureAction())'
 
