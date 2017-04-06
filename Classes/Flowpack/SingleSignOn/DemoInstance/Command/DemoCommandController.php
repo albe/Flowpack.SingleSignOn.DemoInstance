@@ -7,7 +7,7 @@ namespace Flowpack\SingleSignOn\DemoInstance\Command;
 
 use Neos\Flow\Annotations as Flow;
 use Neos\Flow\Cli\CommandController;
-use Neos\Flow\Utility\Files;
+use Neos\Utility\Files;
 
 /**
  * Command controller for setting up a demo instance
