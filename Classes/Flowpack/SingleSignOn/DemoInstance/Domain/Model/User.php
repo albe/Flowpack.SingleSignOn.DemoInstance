@@ -13,7 +13,7 @@ use Doctrine\ORM\Mapping as ORM;
  *
  * @Flow\Entity
  */
-class User extends \TYPO3\Party\Domain\Model\AbstractParty {
+class User extends \Neos\Party\Domain\Model\AbstractParty {
 
 	/**
 	 * The username of the user
