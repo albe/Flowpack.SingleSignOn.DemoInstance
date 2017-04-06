@@ -3,14 +3,20 @@ Flowpack:
   SingleSignOn:
     Client:
       client:
+        # Service base URI as identifier of the DemoInstance client
         serviceBaseUri: ''
+        # Key pair fingerprint of the DemoInstance client
         publicKeyFingerprint: ''
       server:
         DemoServer:
+          # Service base URI of the SSO server
           serviceBaseUri: ''
+          # Public key fingerprint of a SSO server
           publicKeyFingerprint: ''
       accountMapper:
         typeMapping:
+          # Map a user type from the server to one of the instance, more complex scenarios
+          # need a specialized account mapper implementation (see GlobalAccountMapperInterface)
           Flowpack\SingleSignOn\DemoServer\Domain\Model\User: Flowpack\SingleSignOn\DemoInstance\Domain\Model\User
     DemoInstance:
       demoServerUri: 'http://ssodemoserver.dev/'
