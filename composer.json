@@ -1,6 +1,6 @@
 {
     "name": "flowpack/singlesignon-demoinstance",
-    "type": "typo3-flow-package",
+    "type": "neos-flow-package",
     "description": "Application package serving as a demo for an SSO instance",
     "license": [
         "MIT"
@@ -20,9 +20,9 @@
         }
     ],
     "require": {
-        "typo3/flow": "~3.0",
+        "neos/flow": "~4.0",
         "flowpack/singlesignon-client": "*",
-        "typo3/twitter-bootstrap": "dev-master"
+        "neos/twitter-bootstrap": "dev-master"
     },
     "autoload": {
         "psr-0": {
